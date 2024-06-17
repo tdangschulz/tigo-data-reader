@@ -1,0 +1,28 @@
+---
+name: Tigo data
+startup: "application"
+version: "0.0.1"
+slug: tigo
+description: Example add-on by Community Home Assistant Add-ons
+url: https://github.com/tdangschulz/tigo-data-reader
+codenotary: codenotary@frenck.dev
+webui: "http://[HOST]:[PORT:3000]/"
+ingress: true
+ingress_port: 7070
+init: false
+options:
+  TIGO_USER": ""
+  TIGO_PASSWORD": "/data/evcc.db"
+  BASE_URL: "https://ei.tigoenergy.com"
+  SYSTEM_ID: ""
+  log_level: info
+  seconds_between_quotes: 5
+arch:
+  - amd64
+schema:
+  log_level: str
+  seconds_between_quotes: int(1,120)
+  TIGO_USER": str
+  TIGO_PASSWORD": str
+  BASE_URL: str
+  SYSTEM_ID: str
