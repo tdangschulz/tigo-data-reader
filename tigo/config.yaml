@@ -23,6 +23,6 @@ schema:
   log_level: str
   seconds_between_quotes: int(1,120)
   TIGO_USER": str
-  TIGO_PASSWORD": str
+  TIGO_PASSWORD": password
   BASE_URL: str
   SYSTEM_ID: str
