@@ -1,16 +1,29 @@
 {
   "name": "Example devcontainer for add-on repositories",
-  "image": "ghcr.io/home-assistant/devcontainer:addons",
-  "appPort": ["7123:8123", "7357:4357"],
+  "dockerFile": "Dockerfile",
+  "appPort": ["7123:8123", "7357:3000"],
   "postStartCommand": "bash devcontainer_bootstrap",
   "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
   "containerEnv": {
     "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
   },
+  "features": {
+    "node": {
+      "version": "lts",
+      "nodeGypDependencies": true
+    }
+  },
   "customizations": {
     "vscode": {
-      "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode"],
+      "extensions": [
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "timonwong.shellcheck",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker"
+      ],
       "settings": {
+        "editor.tabSize": 4,
         "terminal.integrated.profiles.linux": {
           "zsh": {
             "path": "/usr/bin/zsh"
